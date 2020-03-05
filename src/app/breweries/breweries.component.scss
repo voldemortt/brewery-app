@@ -1,0 +1,79 @@
+@import "../../styles.scss";
+body{
+  font-size: 0.9rem;
+    text-align: center;
+    justify-content: center;
+    word-break: break-all !important;
+}
+table {
+    width: 100%;
+  }
+
+.mat-toolbar.mat-primary{
+    background:white;
+}
+.mat-row:hover {
+    background-color: #E0E0E0;
+  }
+
+  .mat-header-row {
+    background-color: $grid-color;
+  }
+
+  .mat-expansion-panel-header{
+    background-color: #fff;
+  }
+
+  .fill-space {
+    flex: 1 1 auto;
+}
+
+  @mixin matcellstyle {
+    font-size: 0.9rem;
+    text-align: center;
+    justify-content: center;
+    word-break: break-all !important;
+  }
+
+  .mat-header-cell {
+    @include matcellstyle;
+    color: #ffffff;
+  }
+
+  .mat-cell {
+    @include matcellstyle;
+    color : black;
+  }
+
+  .brewery-table .mat-column-id{
+    width:10% !important;
+ }
+
+  .brewery-table .mat-column-name{
+      width:30% !important;
+   }
+
+   .brewery-table .mat-column-established{
+    width:10% !important;
+   }
+
+   .brewery-table .mat-column-isOrganic{
+    width:10% !important;
+   }
+
+   .brewery-table .mat-column-website{
+    width:40% !important;
+   }
+
+input.mat-input-element{
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@media screen and (max-width: 580px) {
+  div.table-container{
+    width:800px !important;
+    overflow: scroll;
+  }
+}

@@ -1,0 +1,56 @@
+<br />
+<div class="col-sm-6 offset-sm-3">
+    <mat-card class="example-card">
+        <mat-card-content>
+            <div class="col-sm-6 offset-sm-3">
+                <form #form="ngForm" style="text-align:center;" (submit)="getBreweryDetails()">
+                    <mat-form-field>
+                        <input matInput placeholder="Brewery ID" name="breweryID" [(ngModel)]="breweryID" required
+                            #name>
+                    </mat-form-field>
+                    <button mat-icon-button type="submit" aria-label="Search Brewery" class="toggle-button" style="color:black;">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </form>
+            </div>
+            <div *ngIf="showDetails">
+                <h2 mat-dialog-title style="text-align: center">Details of {{brewery.name}}</h2>
+                <img mat-card-image src="{{brewery.images.large}}" alt="Photo not found for {{brewery.name}}">
+                <p>{{brewery.description}}</p>
+                <table class="table">
+                    <tr>
+                        <th>Established : </th>
+                        <td>{{brewery.established}}</td>
+                    </tr>
+                    <tr>
+                        <th>Is Organic ?</th>
+                        <td>{{brewery.isOrganic}}</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>{{brewery.statusDisplay}}</td>
+                    </tr>
+                    <tr>
+                        <th>Created Date</th>
+                        <td>{{brewery.createDate}}</td>
+                    </tr>
+                    <tr>
+                        <th>Updated Date</th>
+                        <td>{{brewery.updateDate}}</td>
+                    </tr>
+                    <tr>
+                        <th>is Mass Owned?</th>
+                        <td>{{brewery.isMassOwned}}</td>
+                    </tr>
+                    <tr>
+                        <th>is In Business?</th>
+                        <td>{{brewery.isInBusiness}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="showError">
+                No Brewery Found.
+              </div>
+        </mat-card-content>
+    </mat-card>
+</div>

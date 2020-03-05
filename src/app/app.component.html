@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button class="toggle-button">
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    &nbsp;&nbsp;
+    <h1>Breweries</h1>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+
+      <a mat-list-item [routerLink]="'/home'" (click)="sidenav.toggle()"> Home </a>
+      <a mat-list-item [routerLink]="'/getallbreweries'" (click)="sidenav.toggle()"> All Breweries </a>
+      <a mat-list-item [routerLink]="'/getbrewerydetails'" (click)="sidenav.toggle()"> Search By ID </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

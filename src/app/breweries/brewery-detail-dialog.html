@@ -1,0 +1,8 @@
+<h2 mat-dialog-title style="text-align: center">Details of {{brewery.name}}</h2>
+<img mat-card-image src="{{brewery.images.large}}" alt="Photo not found for {{brewery.name}}">
+<div mat-dialog-content>
+<p>{{brewery.description}}</p>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button class="btn btn-danger" (click)="onNoClick()">Close</button>
+ </div>
